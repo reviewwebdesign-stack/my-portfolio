@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>মো: মিজান ইসলাম | ওয়েবসাইট ডেভেলপার</title>
+<meta name="description" content="ছোট ব্যবসার জন্য অনলাইন শপ ও ওয়েবসাইট ডেভেলপার।">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600&family=Noto+Serif+Bengali:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{--bg:#0a1020;--sf:#111a2e;--line:#212d49;--text:#e8edf5;--mute:#9ba8bd;--ac:#5b9cf6;--tl:#3dd2b0;--ease:cubic-bezier(.22,.61,.36,1)}
+body{font-family:'Noto Sans Bengali','Hind Siliguri',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:16.5px;overflow-x:hidden;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(520px 340px at 92% -40px,rgba(91,156,246,.18),transparent),radial-gradient(460px 320px at -10% 60%,rgba(61,210,176,.08),transparent)}
+a{color:inherit}
+h1,h2,h3,.logo{font-family:'Noto Serif Bengali','Hind Siliguri',serif}
+#pg{position:fixed;top:0;left:0;right:0;height:2px;z-index:30;background:linear-gradient(90deg,var(--ac),var(--tl));transform-origin:left;transform:scaleX(0)}
+header{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px 22px;background:rgba(10,16,32,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{font-weight:700;font-size:1.02rem;color:#fff}
+header nav a{position:relative;margin-left:18px;color:var(--mute);text-decoration:none;font-size:.94rem;transition:color .2s}
+header nav a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;border-radius:2px;background:var(--tl);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+header nav a:hover,header nav a.on{color:#fff}
+header nav a:hover::after,header nav a.on::after{transform:scaleX(1)}
+main{max-width:720px;margin:0 auto;padding:0 22px}
+section{padding:56px 0;border-top:1px solid var(--line);scroll-margin-top:62px}
+.eb{display:block;color:var(--tl);font-size:.85rem;font-weight:600;letter-spacing:.6px;margin-bottom:2px}
+h2{font-size:1.5rem;font-weight:700;color:#fff;line-height:1.4;margin-bottom:8px}
+.sub{color:var(--mute);margin-bottom:26px;font-size:.97rem}
+
+.hero{text-align:center;padding:40px 0 56px;border-top:0}
+.hero>*{animation:up .8s var(--ease) both}
+.hero>:nth-child(2){animation-delay:.1s}.hero>:nth-child(3){animation-delay:.2s}.hero>:nth-child(4){animation-delay:.3s}.hero>:nth-child(5){animation-delay:.4s}.hero>:nth-child(6){animation-delay:.5s}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.pbox{width:220px;margin:0 auto}
+.pbox img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;border-radius:14px;border:1px solid #2a3858;box-shadow:0 20px 50px rgba(91,156,246,.18)}
+.msg{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:9px;margin-top:12px;padding:12px;border-radius:9px;background:var(--ac);color:#fff;font-weight:600;text-decoration:none;font-size:.96rem;transition:transform .3s var(--ease),filter .2s}
+.msg svg{width:18px;height:18px;fill:currentColor}
+.msg::after{content:"";position:absolute;top:0;left:-70%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.3),transparent);transform:skewX(-20deg);transition:left .7s var(--ease)}
+.msg:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.msg:hover::after{left:130%}
+.role{margin-top:30px;color:var(--tl);font-weight:600;font-size:.92rem;letter-spacing:.4px}
+h1{font-size:2.15rem;font-weight:700;color:#fff;line-height:1.35;margin:2px 0 12px}
+.lead{color:var(--mute);max-width:470px;margin:0 auto}
+.ghost{display:inline-block;margin-top:26px;padding:11px 28px;border:1px solid var(--line);border-radius:9px;text-decoration:none;font-size:.95rem;transition:transform .3s var(--ease),border-color .2s,background .2s}
+.ghost:hover{transform:translateY(-2px);border-color:var(--ac);background:var(--sf)}
+
+.svc,.steps{display:grid;gap:14px}
+.card{background:var(--sf);border:1px solid var(--line);border-radius:14px;padding:20px;transition:transform .3s var(--ease),border-color .3s}
+.card:hover{transform:translateY(-3px);border-color:#34466e}
+.ic{width:42px;height:42px;border-radius:10px;background:rgba(91,156,246,.12);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.ic svg{width:21px;height:21px;fill:none;stroke:var(--ac);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:2px}
+.card p{color:var(--mute);font-size:.94rem}
+.num{width:34px;height:34px;border-radius:50%;border:1px solid var(--tl);color:var(--tl);display:flex;align-items:center;justify-content:center;font-weight:600;margin-bottom:12px;font-size:.95rem}
+
+.work{display:block;background:var(--sf);border:1px solid var(--line);border-top:3px solid var(--ac);border-radius:14px;overflow:hidden;margin-bottom:22px;text-decoration:none;transition:transform .35s var(--ease),box-shadow .35s,border-color .25s}
+.work:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.4);border-color:#34466e;border-top-color:var(--ac)}
+.work img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:1px solid var(--line);transition:transform .7s var(--ease)}
+.work:hover img{transform:scale(1.04)}
+.wb{padding:20px 22px 22px;background:var(--sf);position:relative}
+.pn{display:block;color:var(--tl);font-size:.78rem;font-weight:600;letter-spacing:.5px}
+.work h3{font-size:1.2rem;font-weight:700;color:#fff;margin:2px 0 4px;line-height:1.5}
+.work p{color:var(--mute);font-size:.95rem}
+.meta{color:var(--mute);font-size:.82rem;margin-top:8px}
+.go{display:inline-block;margin-top:14px;padding:9px 20px;border-radius:8px;border:1px solid var(--ac);color:var(--ac);font-weight:600;font-size:.92rem;transition:background .25s,color .25s}
+.work:hover .go{background:var(--ac);color:#fff}
+
+.ct{display:block;padding:14px 18px;margin-bottom:12px;background:var(--sf);border:1px solid var(--line);border-radius:12px;text-decoration:none;transition:transform .3s var(--ease),border-color .2s}
+.ct:hover{transform:translateX(5px);border-color:var(--ac)}
+.ct span{display:block;color:var(--tl);font-size:.78rem;font-weight:600}
+.ct b{font-weight:500;color:#fff;word-break:break-all}
+footer{text-align:center;color:var(--mute);padding:28px;font-size:.85rem;border-top:1px solid var(--line)}
+
+@media (min-width:640px){.svc,.steps{grid-template-columns:repeat(3,1fr)}}
+
+.js-anim [data-r]{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0s)}
+.js-anim [data-r].in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js-anim [data-r]{opacity:1!important;transform:none!important}}
+</style>
+</head>
+<body>
+<div id="pg"></div>
+<header>
+  <div class="logo">মো: মিজান ইসলাম</div>
+  <nav><a href="#about">সার্ভিস</a><a href="#work">কাজ</a><a href="#contact">যোগাযোগ</a></nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="pbox">
+    <img src="photo.png" alt="মো: মিজান ইসলাম">
+    <a class="msg" href="https://m.me/61593379021492" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.652V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/></svg>
+      মেসেঞ্জারে মেসেজ করুন
+    </a>
+  </div>
+  <p class="role">ওয়েবসাইট ডেভেলপার</p>
+  <h1>মো: মিজান ইসলাম</h1>
+  <p class="lead">ছোট ব্যবসা ও দোকানের জন্য অনলাইন শপ, অ্যাডমিন প্যানেলসহ ওয়েবসাইট বানিয়ে দিই। দ্রুত, মোবাইল-ফ্রেন্ডলি, বাংলা ভাষায়।</p>
+  <a class="ghost" href="#work">কাজের স্যাম্পল দেখুন</a>
+</section>
+
+<section id="about">
+  <span class="eb">সার্ভিস</span>
+  <h2>আমি যা করি</h2>
+  <p class="sub">HTML, CSS, JavaScript, Node.js ও Firebase দিয়ে ওয়েবসাইট তৈরি করি।</p>
+  <div class="svc">
+    <div class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 9l1.5-5h15L21 9M3 9h18M3 9v11h18V9M9 20v-6h6v6"/></svg></div>
+      <h3>অনলাইন শপ</h3><p>ছোট ব্যবসা ও দোকানের জন্য ই-কমার্স ওয়েবসাইট।</p>
+    </div>
+    <div class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg></div>
+      <h3>অ্যাডমিন প্যানেল</h3><p>পণ্য ও অর্ডার নিজে সামলানোর ব্যবস্থা।</p>
+    </div>
+    <div class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+      <h3>মোবাইল-ফ্রেন্ডলি</h3><p>ফোনে সুন্দরভাবে খোলে এবং দ্রুত চলে।</p>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <span class="eb">কাজ</span>
+  <h2>কাজের স্যাম্পল</h2>
+  <p class="sub">আমার তৈরি করা কিছু ওয়েবসাইট। ক্লিক করে লাইভ দেখুন।</p>
+
+  <a class="work" href="https://nrsweetcorner.onrender.com" target="_blank" rel="noopener">
+    <img src="nr.png" alt="NR Sweet Corner" onerror="this.remove()">
+    <div class="wb">
+      <span class="pn">প্রজেক্ট ০১</span>
+      <h3>NR Sweet Corner</h3>
+      <p>কেক শপের অনলাইন ওয়েবসাইট, অ্যাডমিন প্যানেলসহ।</p>
+      <div class="meta">অনলাইন শপ · অ্যাডমিন প্যানেল</div>
+      <span class="go">লাইভ সাইট দেখুন →</span>
+    </div>
+  </a>
+
+  <a class="work" href="https://mohamadia.1onlineshop.workers.dev" target="_blank" rel="noopener">
+    <img src="mohammadia.png" alt="মোহাম্মদীয়া মোবাইল সার্ভিসিং সেন্টার" onerror="this.remove()">
+    <div class="wb">
+      <span class="pn">প্রজেক্ট ০২</span>
+      <h3>মোহাম্মদীয়া মোবাইল সার্ভিসিং সেন্টার</h3>
+      <p>মোবাইল পার্টসের দোকানের জন্য বাংলা ই-কমার্স সাইট।</p>
+      <div class="meta">ই-কমার্স · বাংলা সাইট</div>
+      <span class="go">লাইভ সাইট দেখুন →</span>
+    </div>
+  </a>
+</section>
+
+<section id="process">
+  <span class="eb">প্রক্রিয়া</span>
+  <h2>কীভাবে কাজ করি</h2>
+  <p class="sub">তিনটা সহজ ধাপে।</p>
+  <div class="steps">
+    <div class="card"><div class="num">১</div><h3>প্রয়োজন জানান</h3><p>মেসেঞ্জারে আপনার ব্যবসা ও কী চান বলুন।</p></div>
+    <div class="card"><div class="num">২</div><h3>ডিজাইন ও তৈরি</h3><p>আপনার ব্যবসার মতো করে সাইট বানাই।</p></div>
+    <div class="card"><div class="num">৩</div><h3>লাইভ করা</h3><p>অনলাইনে চালু করে দিই।</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <span class="eb">যোগাযোগ</span>
+  <h2>কাজ নিয়ে কথা বলুন</h2>
+  <p class="sub">আপনার ব্যবসার জন্য ওয়েবসাইট দরকার? মেসেজ করুন।</p>
+  <a class="ct" href="https://m.me/61593379021492" target="_blank" rel="noopener"><span>Messenger</span><b>m.me/61593379021492</b></a>
+  <a class="ct" href="https://wa.me/8801924440729" target="_blank" rel="noopener"><span>WhatsApp</span><b>01924440729</b></a>
+  <a class="ct" href="mailto:mdmizanislamwab@gmail.com"><span>ইমেইল</span><b>mdmizanislamwab@gmail.com</b></a>
+</section>
+</main>
+
+<footer>© 2026 মো: মিজান ইসলাম</footer>
+
+<script>
+(function(){
+  var d=document,root=d.documentElement;
+  var pg=d.getElementById('pg');
+  function sc(){var h=root.scrollHeight-root.clientHeight;pg.style.transform='scaleX('+(h>0?root.scrollTop/h:0)+')'}
+  addEventListener('scroll',sc,{passive:true});sc();
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  root.classList.add('js-anim');
+  d.querySelectorAll('section:not(.hero)').forEach(function(s){
+    s.querySelectorAll('.card, .work, .ct, section>h2, section>.eb, section>.sub').forEach(function(el,i){
+      el.setAttribute('data-r','');
+      el.style.setProperty('--d',((i%3)*0.1)+'s');
+    });
+  });
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      var el=e.target;el.classList.add('in');io.unobserve(el);
+      setTimeout(function(){el.removeAttribute('data-r');el.style.removeProperty('--d')},1500);
+    });
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  d.querySelectorAll('[data-r]').forEach(function(el){io.observe(el)});
+  var links={};
+  d.querySelectorAll('header nav a').forEach(function(a){links[a.getAttribute('href')]=a});
+  var so=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      Object.keys(links).forEach(function(k){links[k].classList.remove('on')});
+      var a=links['#'+e.target.id];if(a)a.classList.add('on');
+    });
+  },{rootMargin:'-45% 0px -50% 0px'});
+  ['about','work','contact'].forEach(function(id){var s=d.getElementById(id);if(s)so.observe(s)});
+})();
+</script>
+</body>
+</html>
